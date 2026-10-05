@@ -1,46 +1,43 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <title> six seven </title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <title>Six Seven</title>
+    <link rel="stylesheet" href="style.css">
+</head> 
+<body>
 
-        <div class="card-home">
-            <h2> Academia do six seven</h2>
-            <p id="menssagemBoasVindas">Bem vindo</p>
-            <p> Treino liberado.</p>
+    <div class="card-home">
+        <h2>Academia do Six Seven</h2>
+        <p id="mensagemBoasVindas">Bem Vindo!</p>
+        <p>Treino Liberado.</p>
 
-            <button id="btnVerTreinos"> Ver Treinos </button>
-            <button id=" btnSair">Sair</button>
-        </div>
-    
-        <script>
-            const usuarioLogado = localStorage.getItem('usuarioLogado');
+        <button type="button" id="btnVerTreinos">Ver Treinos</button>
+        <button type="button" id="btnCadastrarUsuario"></button>
+        <button type="button" id="btnSair">Sair</button>
+    </div>
 
-            if(!usuarioLogado){
-                window.location.href="index.html";
+    <script>
+        const usuarioLogado = localStorage.getItem('usuarioLogado');
 
-            }else{
-                document.getElementById('menssagemBoasvindas').textContent = 'Ben vindo', +usuariologado +'!';
-            }
-            document.getElementById('btnSair').addEventListener('click',function(){
-                localStorage.removeItem('usuarioLogado');
-                window.location.href='index.html';
-            });
-        </script>
-    </body>
-</html>
+        if (!usuarioLogado) {
+            window.location.href = 'index.html';
+        } else {
+            document.getElementById('mensagemBoasVindas').textContent = 'Bem vindo, ' + usuarioLogado + '!';
+        }
 
+        document.getElementById('btnVerTreinos').addEventListener('click', function () {
+            window.location.href = 'treinos.html';
+        });
 
+        document.getElementById('btnCadastrarUsuario').addEventListener('clik', function(){
+            window.location.href="cadastro.html";
+        });
 
-
-
-
-
-
-
-
-
+        document.getElementById('btnSair').addEventListener('click', function () {
+            localStorage.removeItem('usuarioLogado');
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>  
 </html>
