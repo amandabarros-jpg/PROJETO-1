@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title> Cadastro Usuario </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <form id="formCadastro">
+        <h2> Cadastrar Usuario </h2>
+        <input type="text" id="novoUsuario" placeholder="Novo Usuario" required>
+        <input type="password" id="novaSenha" placeholder="Nova Senha" required>
+        <button type="submit"> Cadastrar </button>
+        <button type="button" id="btnVoltarHome" class="btn-secundario"> Voltar </button>
+    </form>
+
+    <script src="script.js"></script>
+    <script>
+        const usuarioLogado = localStorage.getItem('usuarioLogado');
+        if(!usuarioLogado){
+            window.location.href='index.html';
+        }
+
+        document.getElementById('btnVoltarHome').addEventListener('clik', function(){
+        window.location.href="home.html";
+    });
+    
+    </script>
+    
+</body>
+</html>
